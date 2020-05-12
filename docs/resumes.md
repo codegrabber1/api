@@ -1044,6 +1044,14 @@ expires | строка (дата) | время окончания действи
                 "url": "https://hh.ru/api_resume_converter/12345678901234567890123456789012abcdef/ФамилияИмяОтчество.rtf?type=rtf"
             }
         },
+        "download_with_contact": {
+            "pdf": {
+                "url": "https://hh.ru/api_resume_converter/12345678901234567890123456789012abcdef/ФамилияИмяОтчество.pdf?type=pdf&with_contact=2703892fa808bc3"
+            },
+            "rtf": {
+                "url": "https://hh.ru/api_resume_converter/12345678901234567890123456789012abcdef/ФамилияИмяОтчество.rtf?type=rtf&with_contact=2703892fa808bc3"
+            }
+        },
         "get_with_contact": {
             "url": "https://api.hh.ru/resumes/12345678901234567890123456789012abcdef?with_contact=2703892fa808bc3"
         }         
@@ -1100,7 +1108,8 @@ expires | строка (дата) | время окончания действи
 Имя | Тип | Описание
 -----|-----|---------
 download | [object](#download-object) | Ссылки для скачивания резюме в нескольких форматах ([подробнее](#download-links)).
-get_with_contact | object или null| Ссылка для получения резюме с контактами (происходит трата услуги).
+download_with_contact | [object](#download-object) или null | Ссылки для скачивания резюме с контактами (происходит трата услуги) в нескольких форматах ([подробнее](#download-links)).
+get_with_contact | object или null | Ссылка для получения резюме с контактами (происходит трата услуги).
 get_with_contact.url | строка | Ссылка для получения резюме с контактами. Возвращает объект аналогичный [просмотру резюме](#item)
 
 В полях `download_with_contact` и `get_with_contact` может прийти null, если просмотреть контакты не возможно, например, для анонимного резюме.
